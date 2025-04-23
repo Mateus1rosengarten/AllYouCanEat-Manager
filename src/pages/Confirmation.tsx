@@ -1,5 +1,5 @@
-import { ShoppingCartOutlined } from '@mui/icons-material';
-import { Box, IconButton, Typography } from '@mui/material';
+import { ListAlt, ShoppingCartOutlined } from '@mui/icons-material';
+import { Box, Divider, IconButton, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useMenuHandlers } from '../../utils/menuFunctions';
@@ -77,11 +77,25 @@ const Confirmation: React.FC = () => {
       )}
 
       {menu.length > 0 ? (
-        <TableItems
-          initialItems={menu}
-          remove={true}
-          handleDeleteItemFromCart={handleDeleteItemFromCart}
-        />
+        <Box className="pt-10 sm:pt-20">
+          <Divider sx={{ width: '90%', marginBottom: '5vh' }}>
+            <Typography
+              className="underline decoration-yellow-400 sm:!text-6xl"
+              variant="h4"
+            >
+              Pedido
+            </Typography>
+            <ListAlt
+              htmlColor="#0000008A"
+              className="sm:!w-[50px] sm:!h-[50px] sm:mt-4"
+            />
+          </Divider>
+          <TableItems
+            initialItems={menu}
+            remove={true}
+            handleDeleteItemFromCart={handleDeleteItemFromCart}
+          />
+        </Box>
       ) : (
         <Box className="text-center mt-20 flex flex-col space-y-8">
           <Typography variant="h5" className="font-xl">

@@ -1,9 +1,12 @@
-
-export const content = [
-    "./src/**/*.{js,ts,jsx,tsx}"
-];
-export const theme = {
-    extend: {}
-};
-export const plugins = [];
-
+// tailwind.config.js
+module.exports = {
+    content: [
+      './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',  // Adjust to your project structure
+    ],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  };
+  

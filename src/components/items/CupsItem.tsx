@@ -22,50 +22,37 @@ const CupsItem: React.FC<DrinkItemProps> = ({
 }) => {
   return (
     <>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'flex-start',
-          marginBottom: !itsLastItem ? '1vh' : '4vh',
-          gap: '4vw',
-          paddingLeft: '4vw',
-          width: '80%',
-        }}
-      >
+      <Box className="flex items-start mb-[1vh] last:mb-[4vh] gap-[4vw] pl-[4vw] w-[80%]">
         <Counter
           count={count}
           onIncrement={onIncrement}
           onDecrement={onDecrement}
         />
 
-        <Typography marginTop="2px" variant="h5" maxWidth="70%">
+        <Typography
+          className="!mt-[2px] !text-lg sm:!mt-[12px] sm:!text-3xl max-w-[70%]"
+          variant="h5"
+        >
           {name}
         </Typography>
 
-        <Box
-          display="flex"
-          sx={{
-            position: 'absolute',
-            right: '20px',
-            marginTop: '10px',
-          }}
-        >
+        <Box className="absolute right-[20px] sm:!right-[100px] mt-[10px] flex">
           <img
             src={drinkIcon}
             alt="Custom Icon"
-            style={{ width: 20, height: 20, paddingTop: '0px' }}
+            className="w-[20px] h-[20px] sm:w-[40px] sm:h-[40px] pt-0"
           />
           {drinkIcon2 && (
             <img
               src={drinkIcon2}
               alt="Custom Icon"
-              style={{ width: 20, height: 20, paddingTop: '0px' }}
+              className="w-[20px] h-[20px] sm:w-[40px] sm:h-[40px] pt-0"
             />
           )}
         </Box>
       </Box>
 
-      {!itsLastItem && <Divider sx={{ width: '92%' }} />}
+      {!itsLastItem && <Divider className="w-[92%]" />}
     </>
   );
 };

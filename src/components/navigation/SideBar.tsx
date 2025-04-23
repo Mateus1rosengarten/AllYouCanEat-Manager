@@ -77,38 +77,42 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
   };
 
   const DrawerList = (
-    <Box sx={{ width: '60vw', paddingTop: '5vh' }} role="presentation">
+    <Box role="presentation" className="w-[70vw] sm:w-[60vw] pt-[5vh]">
       <IconButton
         sx={{ position: 'absolute', right: '10px', top: '2vh' }}
         onClick={toggleDrawer(false)}
       >
-        <Close />
+        <Close className="sm:!text-4xl sm:mt-8" />
       </IconButton>
-      <Box className="pl-6">
-        <Typography> Cucinna Italia </Typography>
-        <Typography>Mesa #23</Typography>
+      <Box className="pl-6 sm:pl-10">
+        <Typography className="!text-lg sm:!text-3xl sm:!mb-2">
+          {' '}
+          Cucinna Italia{' '}
+        </Typography>
+        <Typography className="sm:!text-2xl"> Mesa #23</Typography>
       </Box>
-      <List sx={{ paddingY: '25px' }}>
+      <List className="sm:!pl-6 !py-6 sm:!py-10">
         {arrayItens.map((item, index) => (
-          <ListItem
-            key={index}
-            disablePadding
-            className=""
-            // sx={{
-            //   '&:nth-child(even)': { backgroundColor: '#F5F5F5' },
-            // }}
-          >
+          <ListItem key={index} disablePadding className="sm:py-3">
             <ListItemButton onClick={() => handleItemClick(item)}>
               <ListItemIcon>
-                {index === 0 && <LocalPizzaOutlined />}
-                {index === 1 && <LocalPizza />}
-                {index === 2 && <DinnerDining />}
-                {index === 3 && <LocalDrink />}
-                {index === 4 && <ListAlt />}
+                {index === 0 && (
+                  <LocalPizzaOutlined className="sm:!text-4xl sm:!mr-8" />
+                )}
+                {index === 1 && (
+                  <LocalPizza className="sm:!text-4xl sm:!mr-8" />
+                )}
+                {index === 2 && (
+                  <DinnerDining className="sm:!text-4xl sm:!mr-8" />
+                )}
+                {index === 3 && (
+                  <LocalDrink className="sm:!text-4xl sm:!mr-8" />
+                )}
+                {index === 4 && <ListAlt className="sm:!text-4xl sm:!mr-6" />}
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <span className="text-black text-lg scale-x-105 yellow-underline">
+                  <span className="text-black text-lg scale-x-105 underline decoration-yellow-500 sm:text-3xl">
                     {item}
                   </span>
                 }
@@ -118,24 +122,25 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
         ))}
       </List>
       <Divider />
-      <List>
+      <List className="sm:!pl-6">
         {arrayOptions.map((item, index) => (
           <ListItem
             key={index}
             disablePadding
+            className="sm:py-3"
             // sx={{
             //   '&:nth-child(even)': { backgroundColor: '#F5F5F5' },
             // }}
           >
             <ListItemButton onClick={() => handleActionClick(item)}>
               <ListItemIcon>
-                {index === 0 && <History />}
-                {index === 1 && <PersonAdd />}
-                {index === 2 && <Payments />}
+                {index === 0 && <History className="sm:!text-4xl sm:!mr-8" />}
+                {index === 1 && <PersonAdd className="sm:!text-4xl sm:!mr-8" />}
+                {index === 2 && <Payments className="sm:!text-4xl sm:!mr-8" />}
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <span className="text-black text-lg underline yellow-underline">
+                  <span className="text-black text-lg underline decoration-yellow-500 sm:text-3xl">
                     {item}
                   </span>
                 }
@@ -148,20 +153,19 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
         open={openSnackBar}
         onClose={handleCloseSnackBar}
         autoHideDuration={3000}
-        sx={{
-          width: '90%',
-          position: 'absolute',
-          bottom: '20vh',
-          marginX: 'auto',
-        }}
+        className="!w-[90%] !absolute !bottom-[20vh] sm:!bottom-[20vh] !mx-auto"
       >
-        <Alert severity="success" variant="filled">
+        <Alert
+          severity="success"
+          variant="filled"
+          className="sm:w-full sm:!text-2xl sm:h-[100px] sm:!my-auto"
+        >
           Chegaremos a sua mesa o mais rapido possivel
         </Alert>
       </Snackbar>
 
-      <Box position="absolute" bottom={0} width="100%" height="20px">
-        <Typography sx={{ backgroundColor: '#F5F5F5' }} textAlign="center">
+      <Box className="absolute bottom-0 w-full h-[30px] sm:h-[60px] bg-[#F5F5F5]">
+        <Typography className="text-center sm:!text-2xl">
           Powered by RosenTech Solutions
         </Typography>
       </Box>

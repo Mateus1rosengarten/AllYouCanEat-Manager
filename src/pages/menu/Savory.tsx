@@ -17,11 +17,12 @@ const Savory: React.FC = () => {
     navigate,
     count,
     favorites,
-    sortedPizzas,
-  } = useMenuHandlers(pizzas);
+    sortedFood,
+  } = useMenuHandlers();
 
   useEffect(() => {
-    handleSortFavorites(pizzas);
+    handleSortFavorites(pizzas, 'classics');
+    handleSortFavorites(pizzasEspeciais, 'specials');
   }, [favorites, pizzas]);
 
   const navigateToFeedback = (name: string, description: string) => {
@@ -33,19 +34,20 @@ const Savory: React.FC = () => {
       <IconDescriptions />
 
       <Box sx={{ marginTop: '4vh' }}>
-        <Divider
-          sx={{
-            width: '92%',
-            marginBottom: '4vh',
-          }}
-        >
-          <Typography className="yellow-underline" variant="h4">
+        <Divider className="!w-[92%] !mb-[4vh]">
+          <Typography
+            className="underline decoration-yellow-400 sm:!text-6xl"
+            variant="h4"
+          >
             Tradicionais
           </Typography>
-          <LocalPizzaOutlined htmlColor="#0000008A" />
+          <LocalPizzaOutlined
+            htmlColor="#0000008A"
+            className="sm:!w-[50px] sm:!h-[50px] sm:mt-4"
+          />
         </Divider>
 
-        {sortedPizzas.map((pizza, index) => (
+        {sortedFood.classics.map((pizza, index) => (
           <Item
             key={index}
             name={pizza.name}
@@ -66,12 +68,18 @@ const Savory: React.FC = () => {
       </Box>
       <Box>
         <Divider sx={{ width: '90%', marginBottom: '5vh' }}>
-          <Typography className="yellow-underline" variant="h4">
+          <Typography
+            className="underline decoration-yellow-400 sm:!text-6xl"
+            variant="h4"
+          >
             Especiais
           </Typography>
-          <LocalPizzaRounded htmlColor="#0000008A" />
+          <LocalPizzaRounded
+            htmlColor="#0000008A"
+            className="sm:!w-[50px] sm:!h-[50px] sm:mt-4"
+          />
         </Divider>
-        {pizzasEspeciais.map((pizza, index) => (
+        {sortedFood.specials.map((pizza, index) => (
           <Item
             key={index}
             name={pizza.name}

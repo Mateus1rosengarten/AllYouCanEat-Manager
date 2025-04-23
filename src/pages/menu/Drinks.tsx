@@ -29,10 +29,13 @@ const Drinks: React.FC = () => {
           marginBottom: '4vh',
         }}
       >
-        <Typography className="yellow-underline" variant="h4">
+        <Typography
+          className="underline decoration-yellow-400 sm:!text-6xl"
+          variant="h4"
+        >
           Bebidas
         </Typography>
-        <LocalDrink />
+        <LocalDrink className="sm:!w-[50px] sm:!h-[50px] sm:mt-4" />
       </Divider>
       {drinks.map((drink, index) => (
         <DrinkItem

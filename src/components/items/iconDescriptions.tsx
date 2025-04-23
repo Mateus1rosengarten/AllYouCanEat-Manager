@@ -4,34 +4,57 @@ import milkIcon from '/utils/images/milk.png';
 
 const IconDescriptions: React.FC = () => {
   return (
-    <Box
-      className="flex flex-col mx-auto mt-10 border w-3/4 bg-white border-gray-300 rounded-lg shadow-md p-4"
-      sx={{ gap: 2 }}
-    >
+    <Box className="flex flex-col gap:2 sm:gap-10 mx-auto mt-10 sm:mt-14 border w-3/4 sm:w-[650px] bg-white border-gray-300 rounded-lg shadow-md p-4 sm:p-10">
       <Box className="grid grid-cols-2 gap-4 items-center">
-        <Box className="flex items-center gap-2">
+        <Box className="flex items-center">
           <IconButton>
-            <Spa color="success" fontSize="small" />
+            <Spa
+              color="success"
+              fontSize="small"
+              className="sm:!w-10 sm:!h-8"
+            />
           </IconButton>
-          <Typography variant="body1">*Vegetariano</Typography>
+          <Typography variant="body1" className="sm:!text-2xl">
+            * Vegetariano
+          </Typography>
         </Box>
-        <Box className="flex items-center gap-2">
-          <img src={milkIcon} alt="Sem Lactose" className="w-6 h-6 ml-2" />
-          <Typography variant="body1">* Sem Lactose</Typography>
+
+        <Box className="flex items-center">
+          <IconButton className="!pt-3 sm:!pt-4">
+            <RateReviewOutlined
+              fontSize="small"
+              className="sm:!w-10 sm:!h-8"
+              htmlColor="#0000008A"
+            />
+          </IconButton>
+          <Typography variant="body1" className="sm:!text-2xl pt-1">
+            * Avalie Sabor
+          </Typography>
         </Box>
       </Box>
+
       <Box className="grid grid-cols-2 gap-4 items-center">
-        <Box className="flex items-center gap-2">
-          <IconButton>
-            <RateReviewOutlined fontSize="small" htmlColor="#0000008A" />
-          </IconButton>
-          <Typography variant="body1">* Avalie esse sabor</Typography>
+        <Box className="flex items-center gap-[6px]">
+          <img
+            src={milkIcon}
+            alt="Sem Lactose"
+            className="w-6 h-6 ml-[6px] sm:w-10 sm:h-8"
+          />
+          <Typography variant="body1" className="sm:!text-2xl">
+            * Sem Lactose
+          </Typography>
         </Box>
-        <Box className="flex items-center gap-2">
-          <IconButton>
-            <FavoriteBorder fontSize="small" htmlColor="#0000008A" />
+        <Box className="flex items-center">
+          <IconButton className="!pt-3">
+            <FavoriteBorder
+              fontSize="small"
+              className="sm:!w-10 sm:!h-8"
+              htmlColor="#0000008A"
+            />
           </IconButton>
-          <Typography variant="body1">* Indique seus favoritos</Typography>
+          <Typography variant="body1" className="sm:!text-2xl pt-1">
+            * Sabores favoritos
+          </Typography>
         </Box>
       </Box>
     </Box>

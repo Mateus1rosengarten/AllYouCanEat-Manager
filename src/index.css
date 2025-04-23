@@ -1,6 +1,8 @@
+/* src/styles.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
  
  /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -26,10 +28,32 @@ body {
   background-color: 'rgba(245, 245, 245, 0.85)' 
 }
 
-.yellow-underline {
-  text-decoration: underline;
-  text-decoration-color: #FFD35A ; /* Tailwind's yellow-500 */
-  text-decoration-thickness: 3px;
+@keyframes tilt-shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.tilt-shake {
+  animation: tilt-shake 0.3s ease;
+}
+
+@keyframes popStar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-stars {
+  animation: popStar 300ms ease-in-out;
 }
 
 

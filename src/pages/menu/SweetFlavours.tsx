@@ -1,14 +1,13 @@
 import { LocalPizzaTwoTone } from '@mui/icons-material';
 import { Box, Divider, Typography } from '@mui/material';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useMenuHandlers } from '../../../utils/menuFunctions';
 import Item from '../../components/items/Item';
 import IconDescriptions from '../../components/items/iconDescriptions';
 import Footer from '../../components/navigation/Footer';
 import { pizzasDoces } from '../../data/mockData';
 import { toggleFavorite } from '../../redux/favoriteSlice';
-import { RootState } from '../../redux/store';
 
 const SweetFlavours: React.FC = () => {
   const {
@@ -16,16 +15,18 @@ const SweetFlavours: React.FC = () => {
     handleDecrement,
     handleSendToCart,
     navigate,
+    handleSortFavorites,
+    sortedFood,
+    favorites,
     count,
-    menu,
   } = useMenuHandlers();
 
   const dispatch = useDispatch();
-  const favorites = useSelector((state: RootState) => state.favorite.favorites);
 
   useEffect(() => {
-    console.log('menu', menu);
-  }, [menu]);
+    handleSortFavorites(pizzasDoces, 'desserts');
+  }, [favorites]);
+
   const navigateToFeedback = (name: string, description: string) => {
     navigate(`/feedback`, { state: { name, description } });
   };
@@ -35,21 +36,19 @@ const SweetFlavours: React.FC = () => {
   };
 
   return (
-    <Box paddingBottom="8vh">
+    <Box className="pb-[8vh] sm:pt-[40px]">
       <IconDescriptions />
-      <Box sx={{ marginTop: '4vh' }}>
-        <Divider
-          sx={{
-            width: '92%',
-            marginBottom: '4vh',
-          }}
-        >
-          <Typography className="yellow-underline" variant="h4">
+      <Box className="mt-4 sm:pt-[80px]">
+        <Divider className="!w-[92%] !mb-[4vh]">
+          <Typography
+            className="underline decoration-yellow-400 sm:!text-6xl"
+            variant="h4"
+          >
             Pizzas Doces
           </Typography>
-          <LocalPizzaTwoTone />
+          <LocalPizzaTwoTone className="sm:!w-[50px] sm:!h-[50px] sm:mt-4" />
         </Divider>
-        {pizzasDoces.map((pizza, index) => (
+        {sortedFood.desserts.map((pizza, index) => (
           <Item
             key={pizza.name}
             name={pizza.name}

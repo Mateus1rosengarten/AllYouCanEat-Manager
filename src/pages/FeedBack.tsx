@@ -22,13 +22,14 @@ const FeedBack: React.FC = () => {
     text: '* Sua nota e avaliação serão enviadas de maneira anonima',
     status: 'standard',
   });
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const location = useLocation();
   const { name, description } = location.state ?? {
     name: 'Sabor Desconhecido',
     description: 'Descrição não disponível.',
   };
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     console.log(
@@ -74,46 +75,41 @@ const FeedBack: React.FC = () => {
     }, 3000);
   };
 
+  const handleRatingClick = (newValue: number | null) => {
+    if (newValue !== null) {
+      handleOnChange(newValue, 'rating'); // salva a nota
+
+      setAnimate(true); // ativa a classe
+      setTimeout(() => setAnimate(false), 300); // remove depois de 300ms
+    }
+  };
+
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '1vh',
-        paddingTop: '6vh',
-      }}
-    >
+    <Box className="flex flex-col items-center gap-4 pt-[6vh]">
       <SuccessModal
         open={openModal}
         close={() => handleCloseModal()}
         message="Feedback realizado com sucesso,Obrigado!"
       />
-      <Typography
-        width="80%"
-        textAlign="center"
-        variant="h4"
-        className="yellow-underline"
-      >
+      <Typography className="w-4/5 text-center !text-4xl sm:!text-6xl underline decoration-yellow-400">
         {name}
       </Typography>
-      <Typography variant="body1" color="grey">
+      <Typography className="text-gray-500 sm:!text-2xl">
         {description}
       </Typography>
 
       <Rating
         size="large"
-        onChange={(_, newValue) => handleOnChange(newValue ?? 0, 'rating')}
+        onChange={(_, newValue) => handleRatingClick(newValue)}
+        className={animate ? 'animate-stars' : ''}
       />
       <TextField
         onChange={(event) => handleOnChange(event.target.value, 'description')}
         label="O que voce achou desse sabor?"
         helperText={messageHelper.text}
-        // color={messageHelper.status === 'standard' ? 'success' : 'error'}
         color="success"
+        className="w-[90vw] !mt-[6vh] sm:!mt-[2vh]"
         sx={{
-          width: '90vw',
-          marginTop: '6vh',
           '& .MuiInputBase-input': {
             fontSize: '1.2rem',
           },

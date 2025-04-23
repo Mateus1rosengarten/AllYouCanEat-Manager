@@ -27,34 +27,22 @@ const TableItems: React.FC<TableItemsProps> = ({
   return (
     <TableContainer
       component={Paper}
-      sx={{
-        backgroundColor: '#FFF',
-        width: '85vw',
-        marginX: 'auto',
-        marginBottom: '10vh',
-        marginTop: '5vh',
-        borderRadius: '12px',
-        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
-      }}
+      className="bg-white !w-[85vw] sm:!w-[70vw] mx-auto mb-[10vh] mt-[5vh] !rounded-[12px] !shadow-[0px_4px_10px_rgba(0,_0,_0,_0.1)]"
     >
       <Table>
         <TableHead>
-          <TableRow sx={{ backgroundColor: '#F5F5F5' }}>
-            <TableCell
-              sx={{ fontWeight: 'bold', fontSize: '0.9rem', padding: '12px' }}
-            >
+          <TableRow className="bg-[#F5F5F5]">
+            <TableCell className="!font-bold !text-[0.9rem] sm:!text-2xl !p-[12px]">
               Quantidade
             </TableCell>
             <TableCell
               align="left"
-              sx={{ fontWeight: 'bold', fontSize: '0.9rem', padding: '12px' }}
+              className="!font-bold !text-[0.9rem] sm:!text-2xl !p-[12px]"
             >
               Item
             </TableCell>
             {remove && (
-              <TableCell
-                sx={{ fontWeight: 'bold', fontSize: '0.9rem', padding: '12px' }}
-              >
+              <TableCell className="!font-bold !text-[0.9rem] sm:!text-2xl !p-[12px]">
                 Remover
               </TableCell>
             )}
@@ -64,28 +52,27 @@ const TableItems: React.FC<TableItemsProps> = ({
           {initialItems.map((item, index) => (
             <TableRow
               key={index}
-              sx={{
-                '&:nth-of-type(even)': { backgroundColor: '#FAFAFA' },
-                '&:hover': { backgroundColor: '#EEEEEE' },
-                transition: 'background-color 0.3s ease',
-              }}
+              className="odd:bg-[#FAFAFA] !hover:bg-[#EEEEEE] !transition-colors !duration-300"
             >
-              <TableCell sx={{ fontWeight: '600', textAlign: 'left' }}>
+              <TableCell className="font-bold text-left sm:!text-xl">
                 {item.quantity + 'x'}
               </TableCell>
               <TableCell
                 align="left"
-                sx={{ color: '#333', fontWeight: '500', padding: '10px' }}
+                className="text-[#333] font-medium sm:!text-xl p-[10px]"
               >
                 {item.name}
               </TableCell>
               {remove && handleDeleteItemFromCart && (
-                <TableCell sx={{ textAlign: 'center' }}>
+                <TableCell className="text-center">
                   <IconButton
                     onClick={() => handleDeleteItemFromCart(item.name, 1)}
-                    sx={{ color: '#D32F2F' }}
+                    className="!text-[#D32F2F]"
                   >
-                    <RemoveCircleOutline fontSize="small" />
+                    <RemoveCircleOutline
+                      fontSize="small"
+                      className="sm:!w-[30px] sm:!h-[40px]"
+                    />
                   </IconButton>
                 </TableCell>
               )}

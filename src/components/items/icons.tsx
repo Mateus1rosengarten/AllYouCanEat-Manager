@@ -1,6 +1,6 @@
 import { Spa } from '@mui/icons-material';
-import { Stack } from '@mui/material';
 import milkIcon from '/utils/images/milk.png';
+
 interface IconsProps {
   isVeg: boolean;
   noLactose: boolean;
@@ -8,26 +8,21 @@ interface IconsProps {
 
 const Icons: React.FC<IconsProps> = ({ noLactose, isVeg }) => {
   return (
-    <Stack marginLeft="6px" direction="row" gap={1} alignItems="center">
+    <div className="ml-[6px] flex flex-row gap-1 items-center">
       {isVeg && (
         <Spa
           color="success"
-          sx={{
-            marginTop: '3px',
-            marginBottom: '3px',
-            width: 12,
-            height: 12,
-          }}
+          className="!w-[12px] !h-[12px] sm:!w-[20px] sm:!h-[20px] w-mt-[3px] mb-[3px] sm:mt-[4px]"
         />
       )}
       {noLactose && (
         <img
           src={milkIcon}
           alt="Custom Icon"
-          style={{ width: 16, height: 14, paddingTop: '1px' }}
+          className="w-[16px] h-[14px] sm:w-[24px] sm:h-[24px] pt-[1px]"
         />
       )}
-    </Stack>
+    </div>
   );
 };
 

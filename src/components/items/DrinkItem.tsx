@@ -21,13 +21,9 @@ const DrinkItem: React.FC<DrinkItemProps> = ({
   return (
     <>
       <Box
-        sx={{
-          display: 'flex',
-          marginBottom: !itsLastItem ? '1vh' : '4vh',
-          gap: '4vw',
-          paddingLeft: '4vw',
-          width: '80%',
-        }}
+        className={`flex items-start gap-[4vw] pl-[4vw] w-[80%] ${
+          !itsLastItem ? 'mb-[1vh]' : 'mb-[4vh]'
+        }`}
       >
         <Counter
           count={count}
@@ -35,21 +31,18 @@ const DrinkItem: React.FC<DrinkItemProps> = ({
           onDecrement={onDecrement}
         />
 
-        <Typography marginTop="3px" variant="h5">
+        <Typography
+          className="!mt-[3px] sm:!mt-[10px] sm:!text-3xl"
+          variant="h5"
+        >
           {name}
         </Typography>
-        <Box
-          display="flex"
-          alignItems="center"
-          position="absolute"
-          right="20px"
-          marginTop="5px"
-        >
-          <Typography>{`R$${price},00`}</Typography>
+        <Box className="flex items-center absolute right-[20px] sm:right-[60px] mt-[5px] sm:mt-[10px]">
+          <Typography className="sm:!text-2xl">{`R$${price},00`}</Typography>
         </Box>
       </Box>
 
-      {!itsLastItem && <Divider sx={{ width: '92%' }} />}
+      {!itsLastItem && <Divider className="w-[92%]" />}
     </>
   );
 };

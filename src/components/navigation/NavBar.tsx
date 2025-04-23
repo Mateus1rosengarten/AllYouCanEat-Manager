@@ -1,5 +1,5 @@
 import { MenuRounded } from '@mui/icons-material';
-import { AppBar, IconButton, Toolbar } from '@mui/material';
+import { AppBar, IconButton } from '@mui/material';
 import { useState } from 'react';
 import SideBar from './SideBar';
 
@@ -22,35 +22,19 @@ const NavBar: React.FC<NavBarProps> = ({ src }) => {
         elevation={0}
         component="header"
         color="transparent"
-        sx={{
-          backgroundColor: 'rgba(255, 255, 255, 0.15)',
-          display: 'flex',
-          flexDirection: 'column',
-          width: '100%',
-          height: '40vh',
-          position: 'relative',
-          borderBottom: '4px solid #2e7d32',
-          borderLeft: '1px solid #2e7d32',
-          borderRight: '1px solid #2e7d32',
-          borderBottomLeftRadius: '15%',
-          borderBottomRightRadius: '15%',
-          boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)',
-        }}
+        className="h-[40vh] sm:h-[50vh] !bg-white/15 border-x border-b-4 sm:border-b-8 border-[#2e7d32] rounded-b-[15%] sm:rounded-b-[25%] shadow-lg"
       >
-        <Toolbar className="flex w-[100vw] justify-between bg-white h-10">
-          <IconButton size="large" onClick={handleOpenDrawer}>
-            <MenuRounded htmlColor="#0000008A" />
-          </IconButton>
-        </Toolbar>
+        <IconButton
+          onClick={handleOpenDrawer}
+          className="absolute left-6 sm:left-20 top-6 sm:top-10 w-2"
+        >
+          <MenuRounded htmlColor="#0000008A" className="sm:!text-5xl" />
+        </IconButton>
+
         <img
           src={src}
           alt="Logo do Restaurante"
-          style={{
-            width: '300px',
-            height: '300px',
-            objectFit: 'contain',
-            margin: 'auto',
-          }}
+          className="w-[250px] object-contain m-auto sm:w-[600px]"
         />
       </AppBar>
     </>

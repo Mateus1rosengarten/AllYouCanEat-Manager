@@ -10,9 +10,23 @@ interface CountParams {
   itemName: string;
 }
 
-export const useMenuHandlers = (menuItems: Item[]) => {
+interface SortedFoodArray {
+  classics: Item[];
+  specials: Item[];
+  pasta: Item[];
+  desserts: Item[];
+}
+
+const menuItems = {
+  classics: [],
+  specials: [],
+  pasta: [],
+  desserts: [],
+};
+
+export const useMenuHandlers = () => {
   const [count, setCount] = useState<Record<string, number>>({});
-  const [sortedPizzas, setSortedPizzas] = useState<Item[]>(menuItems);
+  const [sortedFood, setSortedFood] = useState<SortedFoodArray>(menuItems);
   const menu = useSelector((state: RootState) => state.menu.menu);
   const favorites = useSelector((state: RootState) => state.favorite.favorites);
   const navigate = useNavigate();
@@ -67,15 +81,18 @@ export const useMenuHandlers = (menuItems: Item[]) => {
     navigate(route);
   };
 
-  const handleSortFavorites = (pizzas: Item[]) => {
-    const sorted = pizzas.sort((a, b) => {
+  const handleSortFavorites = (food: Item[], option: keyof SortedFoodArray) => {
+    const sorted = [...food].sort((a, b) => {
       const isFavoriteA = favorites.includes(a.name);
       const isFavoriteB = favorites.includes(b.name);
       if (isFavoriteA && !isFavoriteB) return -1;
       if (!isFavoriteA && isFavoriteB) return 1;
       return 0;
     });
-    setSortedPizzas([...sorted]);
+    setSortedFood((prev) => ({
+      ...prev,
+      [option]: sorted,
+    }));
   };
 
   const handleIsFavorite = (name: string) => {
@@ -89,7 +106,7 @@ export const useMenuHandlers = (menuItems: Item[]) => {
     handleSortFavorites,
     handleIsFavorite,
     navigate,
-    sortedPizzas,
+    sortedFood,
     favorites,
     count,
     menu,

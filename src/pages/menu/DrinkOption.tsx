@@ -13,16 +13,7 @@ const DrinkOption: React.FC = () => {
   }, [menu]);
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-start',
-        paddingTop: '12vh',
-        paddingBottom: '8vh',
-        gap: '2vw',
-      }}
-    >
+    <Box className="flex flex-col items-start pt-[12vh] pb-[8vh] sm:pb-[12vh] gap-[2vw]">
       {cups.map((cup, index) => (
         <CupsItem
           key={index}

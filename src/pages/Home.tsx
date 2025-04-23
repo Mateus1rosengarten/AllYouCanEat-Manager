@@ -12,13 +12,21 @@ const Home: React.FC = () => {
 
   return (
     <Box sx={boxTheme}>
-      <Button onClick={() => navigateTo('pizzas')} variant="contained">
+      <Button
+        onClick={() => navigateTo('pizzas')}
+        variant="contained"
+        className="sm:!w-3/4 sm:!text-3xl"
+      >
         Rodizio
-        <Restaurant sx={{ marginLeft: '5px' }} />
+        <Restaurant className="ml-[5px] sm:ml-[10px] sm:!text-5xl" />
       </Button>
-      <Button onClick={() => navigateTo('bebidas')} variant="contained">
+      <Button
+        onClick={() => navigateTo('bebidas')}
+        variant="contained"
+        className="sm:!w-3/4 sm:!text-3xl"
+      >
         Bebidas
-        <LocalDrink sx={{ marginLeft: '5px' }} />
+        <LocalDrink className="ml-[5px] sm:ml-[10px] sm:!text-5xl" />
       </Button>
     </Box>
   );

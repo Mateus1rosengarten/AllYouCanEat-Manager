@@ -37,13 +37,9 @@ const Item: React.FC<ItemProps> = ({
   return (
     <>
       <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'flex-start',
-          marginBottom: !itsLastItem ? '1vh' : '4vh',
-          gap: '4vw',
-          paddingLeft: '4vw',
-        }}
+        className={`flex items-start gap-[4vw] pl-[4vw] ${
+          !itsLastItem ? 'mb-[1vh]' : 'mb-[4vh]'
+        }`}
       >
         <Counter
           count={count}
@@ -51,35 +47,31 @@ const Item: React.FC<ItemProps> = ({
           onDecrement={onDecrement}
         />
 
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: '80%',
-          }}
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              width: '100%',
-              paddingTop: '1.5px',
-            }}
-          >
-            <Typography variant="h5">{name}</Typography>
+        <Box className="flex flex-col w-[80%]">
+          <Box className="flex flex-wrap w-full pt-[1.5px] sm:pt-[8px]">
+            <Typography variant="h5" className="sm:!text-3xl">
+              {name}
+            </Typography>
             <Icons isVeg={isVeg} noLactose={noLactose} />
           </Box>
-          <Typography width={'80%'} variant="body1">
+          <Typography width={'80%'} className="sm:!text-xl" variant="body1">
             {description}
           </Typography>
         </Box>
-        <Box className="flex px-2">
+        <Box className="flex px-2 sm:px-20 sm:py-4 sm:gap-4">
           <IconButton onClick={handleButtonReview}>
-            <RateReviewOutlined htmlColor="#000000A0" />
+            <RateReviewOutlined
+              htmlColor="#000000A0"
+              className="sm:!w-[35px] sm:!h-[35px]"
+            />
           </IconButton>
 
           <IconButton onClick={() => handleIsFavorite(name)}>
-            {isFavorite ? <Favorite /> : <FavoriteBorder />}
+            {isFavorite ? (
+              <Favorite className="sm:!w-[35px] sm:!h-[35px]" />
+            ) : (
+              <FavoriteBorder className="sm:!w-[35px] sm:!h-[35px]" />
+            )}
           </IconButton>
         </Box>
       </Box>
