@@ -62,15 +62,15 @@ const Item: React.FC<ItemProps> = ({
           <IconButton onClick={handleButtonReview}>
             <RateReviewOutlined
               htmlColor="#000000A0"
-              className="sm:!w-[35px] sm:!h-[35px]"
+              className="mt-[3px] !w-[20px] sm:!w-[35px] sm:!h-[35px]"
             />
           </IconButton>
 
           <IconButton onClick={() => handleIsFavorite(name)}>
             {isFavorite ? (
-              <Favorite className="sm:!w-[35px] sm:!h-[35px]" />
+              <Favorite className="!w-[20px] h-[5px] sm:!w-[35px] sm:!h-[35px]" />
             ) : (
-              <FavoriteBorder className="sm:!w-[35px] sm:!h-[35px]" />
+              <FavoriteBorder className="!w-[20px] sm:!w-[35px] sm:!h-[35px]" />
             )}
           </IconButton>
         </Box>

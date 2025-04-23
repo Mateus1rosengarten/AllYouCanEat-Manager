@@ -53,7 +53,7 @@ const IconDescriptions: React.FC = () => {
             />
           </IconButton>
           <Typography variant="body1" className="sm:!text-2xl pt-1">
-            * Sabores favoritos
+            * Favoritos
           </Typography>
         </Box>
       </Box>

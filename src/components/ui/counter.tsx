@@ -26,18 +26,18 @@ const Counter: React.FC<CounterProps> = ({
     >
       <Typography
         onClick={handleAnimaton}
-        className="font-bold cursor-pointer text-[#424242] sm:!text-2xl transition duration-100 active:[transform:scale(1.7)]"
+        className="!font-bold cursor-pointer text-[#424242] sm:!text-2xl transition duration-100 active:[transform:scale(1.7)]"
       >
         +
       </Typography>
 
-      <Typography className="cursor-pointer text-[#333333] sm:!text-xl sm:px-2">
+      <Typography className="!font-bold cursor-pointer text-[#333333] sm:!text-xl sm:px-2">
         {count}
       </Typography>
 
       <Typography
         onClick={onDecrement}
-        className="font-bold cursor-pointer text-[#424242] sm:!text-4xl"
+        className="!font-bold cursor-pointer text-[#424242] sm:!text-4xl"
       >
         -
       </Typography>

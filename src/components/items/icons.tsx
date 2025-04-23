@@ -12,14 +12,14 @@ const Icons: React.FC<IconsProps> = ({ noLactose, isVeg }) => {
       {isVeg && (
         <Spa
           color="success"
-          className="!w-[12px] !h-[12px] sm:!w-[20px] sm:!h-[20px] w-mt-[3px] mb-[3px] sm:mt-[4px]"
+          className="!w-[12px] !h-[12px] sm:!w-[20px] sm:!h-[20px] w-mt-[3px] sm:mt-[4px]"
         />
       )}
       {noLactose && (
         <img
           src={milkIcon}
           alt="Custom Icon"
-          className="w-[16px] h-[14px] sm:w-[24px] sm:h-[24px] pt-[1px]"
+          className="w-[16px] h-[14px] sm:w-[24px] sm:h-[24px] mt-[1px]"
         />
       )}
     </div>
