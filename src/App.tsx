@@ -33,7 +33,7 @@ function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <NavBar src={'/public/italiapizza.png'} />
+      <NavBar src={'/italiapizza.png'} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pizzas" element={<FoodOptions />} />
