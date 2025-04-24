@@ -112,7 +112,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <span className="font-semibold text-lg scale-x-105 underline decoration-yellow-500 sm:text-3xl">
+                  <span className="font-black text-lg scale-x-105 underline decoration-yellow-500 sm:text-3xl">
                     {item}
                   </span>
                 }
@@ -140,7 +140,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <span className="font-semibold text-lg underline decoration-yellow-500 sm:text-3xl">
+                  <span className="font-black text-lg underline decoration-yellow-500 sm:text-3xl">
                     {item}
                   </span>
                 }

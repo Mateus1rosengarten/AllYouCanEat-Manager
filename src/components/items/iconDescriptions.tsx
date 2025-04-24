@@ -49,7 +49,6 @@ const IconDescriptions: React.FC = () => {
             <Favorite
               fontSize="small"
               className="text-yellow-400 sm:!w-10 sm:!h-8"
-              htmlColor="yellow"
             />
           </IconButton>
           <Typography variant="body1" className="sm:!text-2xl pt-1">
