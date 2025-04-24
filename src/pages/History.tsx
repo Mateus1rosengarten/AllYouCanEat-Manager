@@ -28,7 +28,15 @@ const HistoryItems: React.FC = () => {
             className="sm:!w-[50px] sm:!h-[50px] sm:mt-4"
           />
         </Divider>
-        <TableItems initialItems={history} remove={false} />
+        {history.length > 0 ? (
+          <TableItems initialItems={history} remove={false} />
+        ) : (
+          <Box className="text-center mt-10 flex flex-col space-y-8">
+            <Typography variant="h5" className="font-xl">
+              Nenhum pedido ainda realizado!
+            </Typography>
+          </Box>
+        )}
         <Footer handleOnClick={() => null} />
       </Box>
     </>
