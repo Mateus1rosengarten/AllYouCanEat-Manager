@@ -85,13 +85,13 @@ const FeedBack: React.FC = () => {
   };
 
   return (
-    <Box className="flex flex-col items-center gap-4 pt-[6vh] pb-[25vh]">
+    <Box className="flex flex-col items-center gap-4 pt-[6vh] pb-[15vh]">
       <SuccessModal
         open={openModal}
         close={() => handleCloseModal()}
         message="Feedback realizado com sucesso,Obrigado!"
       />
-      <Typography className="w-4/5 text-center !text-4xl sm:!text-6xl underline decoration-yellow-400">
+      <Typography className="!font-medium w-4/5 text-center !text-4xl sm:!text-6xl underline decoration-yellow-400">
         {name}
       </Typography>
       <Typography className="text-gray-500 sm:!text-2xl">

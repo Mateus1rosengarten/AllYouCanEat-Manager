@@ -17,7 +17,7 @@ const theme = createTheme({
     fontFamily: 'Lato, sans-serif',
     h5: {
       fontWeight: '500',
-      fontSize: '1.2rem',
+      fontSize: '1rem',
       color: '#333333',
       letterSpacing: '0.05rem',
     },

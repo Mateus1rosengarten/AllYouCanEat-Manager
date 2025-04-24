@@ -30,7 +30,7 @@ const CupsItem: React.FC<DrinkItemProps> = ({
         />
 
         <Typography
-          className="!mt-[2px] !text-lg sm:!mt-[12px] sm:!text-3xl max-w-[70%]"
+          className="!mt-[2px] !text-md sm:!mt-[12px] sm:!text-3xl max-w-[70%]"
           variant="h5"
         >
           {name}

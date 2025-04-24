@@ -54,7 +54,7 @@ const TableItems: React.FC<TableItemsProps> = ({
               key={index}
               className="odd:bg-[#FAFAFA] !hover:bg-[#EEEEEE] !transition-colors !duration-300"
             >
-              <TableCell className="font-bold text-left sm:!text-xl">
+              <TableCell className="!font-bold text-left sm:!text-xl">
                 {item.quantity + 'x'}
               </TableCell>
               <TableCell

@@ -47,14 +47,14 @@ const Item: React.FC<ItemProps> = ({
           onDecrement={onDecrement}
         />
 
-        <Box className="flex flex-col w-[80%]">
+        <Box className="flex flex-col w-[100%]">
           <Box className="flex flex-wrap w-full pt-[1.5px] sm:pt-[8px]">
             <Typography variant="h5" className="sm:!text-3xl">
               {name}
             </Typography>
             <Icons isVeg={isVeg} noLactose={noLactose} />
           </Box>
-          <Typography width={'80%'} className="sm:!text-xl" variant="body1">
+          <Typography width={'100%'} className="sm:!text-xl" variant="body1">
             {description}
           </Typography>
         </Box>
@@ -68,7 +68,7 @@ const Item: React.FC<ItemProps> = ({
 
           <IconButton onClick={() => handleIsFavorite(name)}>
             {isFavorite ? (
-              <Favorite className="!w-[20px] h-[5px] sm:!w-[35px] sm:!h-[35px]" />
+              <Favorite className="text-yellow-400 !w-[20px] h-[5px] sm:!w-[35px] sm:!h-[35px]" />
             ) : (
               <FavoriteBorder className="!w-[20px] sm:!w-[35px] sm:!h-[35px]" />
             )}

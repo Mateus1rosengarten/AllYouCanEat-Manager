@@ -85,7 +85,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
         <Close className="sm:!text-4xl sm:mt-8" />
       </IconButton>
       <Box className="pl-6 sm:pl-10">
-        <Typography className="!text-lg sm:!text-3xl sm:!mb-2">
+        <Typography className="!font-medium !text-lg sm:!text-3xl sm:!mb-2">
           {' '}
           Cucinna Italia{' '}
         </Typography>
@@ -112,7 +112,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <span className="text-black text-lg scale-x-105 underline decoration-yellow-500 sm:text-3xl">
+                  <span className="font-semibold text-lg scale-x-105 underline decoration-yellow-500 sm:text-3xl">
                     {item}
                   </span>
                 }
@@ -140,7 +140,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <span className="text-black text-lg underline decoration-yellow-500 sm:text-3xl">
+                  <span className="font-semibold text-lg underline decoration-yellow-500 sm:text-3xl">
                     {item}
                   </span>
                 }
@@ -153,7 +153,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
         open={openSnackBar}
         onClose={handleCloseSnackBar}
         autoHideDuration={3000}
-        className="!w-[90%] !absolute !bottom-[10vh] sm:!bottom-[20vh] !mx-auto"
+        className="!w-[90%] !absolute !bottom-[10vh] sm:!bottom-[15vh] !mx-auto"
       >
         <Alert
           severity="success"
