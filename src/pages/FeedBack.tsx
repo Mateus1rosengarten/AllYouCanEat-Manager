@@ -85,7 +85,7 @@ const FeedBack: React.FC = () => {
   };
 
   return (
-    <Box className="flex flex-col items-center gap-4 pt-[6vh] pb-[15vh]">
+    <Box className="flex flex-col items-center gap-4 pt-[6vh] pb-[10vh]">
       <SuccessModal
         open={openModal}
         close={() => handleCloseModal()}

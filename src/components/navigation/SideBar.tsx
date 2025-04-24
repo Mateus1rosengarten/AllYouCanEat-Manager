@@ -153,7 +153,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
         open={openSnackBar}
         onClose={handleCloseSnackBar}
         autoHideDuration={3000}
-        className="!w-[90%] !absolute !bottom-[10vh] sm:!bottom-[15vh] !mx-auto"
+        className="!w-[90%] !absolute !bottom-[10vh] sm:!bottom-[7vh] !mx-auto"
       >
         <Alert
           severity="success"
