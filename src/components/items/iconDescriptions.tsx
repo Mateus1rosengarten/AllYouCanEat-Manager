@@ -1,4 +1,4 @@
-import { FavoriteBorder, RateReviewOutlined, Spa } from '@mui/icons-material';
+import { Favorite, RateReviewOutlined, Spa } from '@mui/icons-material';
 import { Box, IconButton, Typography } from '@mui/material';
 import milkIcon from '/utils/images/milk.png';
 
@@ -46,10 +46,10 @@ const IconDescriptions: React.FC = () => {
         </Box>
         <Box className="flex items-center">
           <IconButton className="!pt-3">
-            <FavoriteBorder
+            <Favorite
               fontSize="small"
-              className="sm:!w-10 sm:!h-8"
-              htmlColor="#0000008A"
+              className="text-yellow-400 sm:!w-10 sm:!h-8"
+              htmlColor="yellow"
             />
           </IconButton>
           <Typography variant="body1" className="sm:!text-2xl pt-1">
