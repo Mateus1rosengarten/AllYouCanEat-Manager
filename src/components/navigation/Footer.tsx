@@ -1,6 +1,7 @@
 import { ListAlt, Send, WestOutlined } from '@mui/icons-material';
 import { BottomNavigation, BottomNavigationAction } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useMenuHandlers } from '../../../utils/menuFunctions';
 
 interface FooterProps {
   handleOnClick: () => void;
@@ -9,6 +10,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ handleOnClick }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { menu } = useMenuHandlers();
 
   const handleGoBack = () => {
     navigate(-1);
@@ -18,7 +20,8 @@ const Footer: React.FC<FooterProps> = ({ handleOnClick }) => {
     navigate('/confirmation');
   };
 
-  const itsHighlighted = location.pathname === '/confirmation';
+  const itsHighlighted =
+    location.pathname === '/confirmation' && menu.length > 0;
   return (
     // <BottomNavigation
     //   className="h-10"

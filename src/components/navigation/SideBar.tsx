@@ -24,7 +24,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface SideBarProps {
   drawerOpen: boolean;
@@ -39,9 +39,10 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
     'Pedidos',
   ];
 
-  const [openSnackBar, setOpenSnackBar] = useState(false);
+  const [openSnackBar, setOpenSnackBar] = useState<boolean>(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const arrayOptions = ['Histórico', 'Chamar o Garçom', 'Pedir a Conta'];
 
@@ -93,26 +94,34 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
       </Box>
       <List className="sm:!pl-6 !py-6 sm:!py-10">
         {arrayItens.map((item, index) => (
-          <ListItem key={index} disablePadding className="sm:py-3">
+          <ListItem
+            key={index}
+            disablePadding
+            className={`sm:py-3 ${
+              location.pathname === routes[item] ? 'bg-[#f5f5f5]' : ''
+            }`}
+          >
             <ListItemButton onClick={() => handleItemClick(item)}>
               <ListItemIcon>
                 {index === 0 && (
-                  <LocalPizzaOutlined className="sm:!text-4xl sm:!mr-8" />
+                  <LocalPizzaOutlined className="sm:!text-4xl sm:!mr-8 text-yellow-400" />
                 )}
                 {index === 1 && (
-                  <LocalPizza className="sm:!text-4xl sm:!mr-8" />
+                  <LocalPizza className="sm:!text-4xl sm:!mr-8 text-yellow-600" />
                 )}
                 {index === 2 && (
-                  <DinnerDining className="sm:!text-4xl sm:!mr-8" />
+                  <DinnerDining className="sm:!text-4xl sm:!mr-8 text-yellow-400" />
                 )}
                 {index === 3 && (
-                  <LocalDrink className="sm:!text-4xl sm:!mr-8" />
+                  <LocalDrink className="sm:!text-4xl sm:!mr-8 text-yellow-600" />
                 )}
-                {index === 4 && <ListAlt className="sm:!text-4xl sm:!mr-6" />}
+                {index === 4 && (
+                  <ListAlt className="sm:!text-4xl sm:!mr-6 text-yellow-400" />
+                )}
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <span className="font-black text-lg scale-x-105 underline decoration-yellow-500 sm:text-3xl">
+                  <span className="font-bold text-lg scale-x-105 underline decoration-yellow-500 sm:text-3xl">
                     {item}
                   </span>
                 }
@@ -134,13 +143,19 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
           >
             <ListItemButton onClick={() => handleActionClick(item)}>
               <ListItemIcon>
-                {index === 0 && <History className="sm:!text-4xl sm:!mr-8" />}
-                {index === 1 && <PersonAdd className="sm:!text-4xl sm:!mr-8" />}
-                {index === 2 && <Payments className="sm:!text-4xl sm:!mr-8" />}
+                {index === 0 && (
+                  <History className="sm:!text-4xl sm:!mr-8 text-yellow-600" />
+                )}
+                {index === 1 && (
+                  <PersonAdd className="sm:!text-4xl sm:!mr-8 text-[#2e7d32]" />
+                )}
+                {index === 2 && (
+                  <Payments className="sm:!text-4xl sm:!mr-8 text-[#2e7d32]" />
+                )}
               </ListItemIcon>
               <ListItemText
                 primary={
-                  <span className="font-black text-lg underline decoration-yellow-500 sm:text-3xl">
+                  <span className="font-bold text-lg underline decoration-yellow-500 sm:text-3xl">
                     {item}
                   </span>
                 }
@@ -153,7 +168,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
         open={openSnackBar}
         onClose={handleCloseSnackBar}
         autoHideDuration={3000}
-        className="!w-[90%] !absolute !bottom-[10vh] sm:!bottom-[7vh] !mx-auto"
+        className="!w-[90%] !absolute !bottom-[5vh] sm:!bottom-[7vh] !mx-auto"
       >
         <Alert
           severity="success"

@@ -42,6 +42,7 @@ const Drinks: React.FC = () => {
           key={index}
           name={drink.name}
           price={drink.price}
+          drinkIcon={drink.drinkIcon}
           count={count[drink.name] || 0}
           onIncrement={() => handleIncrement({ itemName: drink.name })}
           onDecrement={() => handleDecrement(drink.name)}

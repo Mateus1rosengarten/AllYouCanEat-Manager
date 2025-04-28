@@ -22,6 +22,7 @@ export interface Item {
 export interface DrinkItem {
   name: string;
   price: number;
+  drinkIcon: string;
 }
 
 export interface CupsItem {

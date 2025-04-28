@@ -85,7 +85,7 @@ const FeedBack: React.FC = () => {
   };
 
   return (
-    <Box className="flex flex-col items-center gap-4 pt-[6vh] pb-[10vh]">
+    <Box className="flex flex-col items-center gap-4 pt-[6vh] pb-[6vh]">
       <SuccessModal
         open={openModal}
         close={() => handleCloseModal()}
@@ -108,7 +108,7 @@ const FeedBack: React.FC = () => {
         label="O que voce achou desse sabor?"
         helperText={messageHelper.text}
         color="success"
-        className="w-[90vw] !mt-[6vh] sm:!mt-[2vh]"
+        className="w-[90vw] !mt-[2vh]"
         sx={{
           '& .MuiInputBase-input': {
             fontSize: '1.2rem',

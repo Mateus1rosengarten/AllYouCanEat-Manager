@@ -6,6 +6,7 @@ interface DrinkItemProps {
   price?: number;
   itsLastItem?: boolean;
   count: number;
+  drinkIcon: string;
   onIncrement: () => void;
   onDecrement: () => void;
 }
@@ -15,6 +16,7 @@ const DrinkItem: React.FC<DrinkItemProps> = ({
   price,
   itsLastItem,
   count,
+  drinkIcon,
   onIncrement,
   onDecrement,
 }) => {
@@ -30,15 +32,21 @@ const DrinkItem: React.FC<DrinkItemProps> = ({
           onIncrement={onIncrement}
           onDecrement={onDecrement}
         />
-
-        <Typography
-          className="!mt-[3px] sm:!mt-[10px] sm:!text-3xl"
-          variant="h5"
-        >
-          {name}
-        </Typography>
-        <Box className="flex items-center absolute right-[20px] sm:right-[60px] mt-[5px] sm:mt-[10px]">
+        <Box className="flex flex-col">
+          <Typography
+            className="!mt-[3px] sm:!mt-[10px] sm:!text-3xl"
+            variant="h5"
+          >
+            {name}
+          </Typography>
           <Typography className="sm:!text-2xl">{`R$${price},00`}</Typography>
+        </Box>
+        <Box className="flex items-center absolute right-[20px] sm:right-[60px] mt-[5px] sm:mt-[10px]">
+          <img
+            src={drinkIcon}
+            alt="drinkiCON"
+            className="w-[40px] h-[40px] sm:w-[40px] sm:h-[40px] pt-0 rounded"
+          />
         </Box>
       </Box>
 
