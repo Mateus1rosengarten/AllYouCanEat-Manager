@@ -1,9 +1,11 @@
-import agua from './agua.jpg';
+import agua from './agua600.png';
 import aguagas from './aguagas.jpg';
 import ananas from './ananas.jpg';
 import bottle from './beer.png';
 import coke from './coca.jpg';
-import cokeZero from './cocazero.jpg';
+import coca600 from './coca600.png';
+import cocapet from './cocapet.png';
+import cocazero from './cocazero.png';
 import icecub from './cold.png';
 import cup from './glass.png';
 import heineken from './heineken.jpg';
@@ -15,7 +17,9 @@ import original from './original.jpg';
 
 export const images = {
   coke,
-  cokeZero,
+  coca600,
+  cocazero,
+  cocapet,
   agua,
   aguagas,
   heineken,

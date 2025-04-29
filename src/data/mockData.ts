@@ -127,9 +127,9 @@ export const massas: Item[] = [
 ];
 
 export const drinks: DrinkItem[] = [
-  { name: 'Coca Cola 2L', price: 12.0, drinkIcon: images.coke },
-  { name: 'Coca Cola 600ml', price: 8.0, drinkIcon: images.coke },
-  { name: 'Coca Cola Zero 600ml', price: 8.0, drinkIcon: images.cokeZero },
+  { name: 'Coca Cola 2L', price: 12.0, drinkIcon: images.cocapet },
+  { name: 'Coca Cola 600ml', price: 8.0, drinkIcon: images.coca600 },
+  { name: 'Coca Cola Zero 600ml', price: 8.0, drinkIcon: images.cocazero },
   { name: 'Agua', price: 6.0, drinkIcon: images.agua },
   { name: 'Agua com Gas', price: 6.0, drinkIcon: images.aguagas },
   { name: 'Cerveja Heineken 600ml', price: 18.0, drinkIcon: images.heineken },
