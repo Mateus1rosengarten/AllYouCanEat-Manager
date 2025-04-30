@@ -36,7 +36,7 @@ const Savory: React.FC = () => {
       <Box sx={{ marginTop: '4vh' }}>
         <Divider className="!w-[92%] !mb-[4vh]">
           <Typography
-            className="underline decoration-yellow-600 sm:!text-6xl"
+            className="underline decoration-yellow-400 sm:!text-6xl"
             variant="h4"
           >
             Tradicionais
@@ -69,7 +69,7 @@ const Savory: React.FC = () => {
       <Box>
         <Divider sx={{ width: '90%', marginBottom: '5vh' }}>
           <Typography
-            className="underline decoration-yellow-600 sm:!text-6xl"
+            className="underline decoration-yellow-400 sm:!text-6xl"
             variant="h4"
           >
             Especiais

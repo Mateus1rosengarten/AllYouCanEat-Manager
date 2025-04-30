@@ -4,6 +4,7 @@ import {
   History,
   ListAlt,
   LocalDrink,
+  LocalDrinkOutlined,
   LocalPizza,
   LocalPizzaOutlined,
   Payments,
@@ -36,6 +37,7 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
     'Pizzas Doces',
     'Massas',
     'Bebidas',
+    'Copos',
     'Pedidos',
   ];
 
@@ -51,10 +53,15 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
     'Pizzas Doces': '/doces',
     Massas: '/massas',
     Bebidas: '/bebidas',
+    Copos: '/bebidas/copos',
     Pedidos: '/confirmation',
   };
 
   const handleItemClick = (item: string) => {
+    if (item === 'Copos') {
+      navigate('/bebidas/copos');
+      setDrawerOpen(false);
+    }
     const route = routes[item];
     navigate(route);
     setDrawerOpen(false);
@@ -115,7 +122,10 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
                 {index === 3 && (
                   <LocalDrink className="sm:!text-4xl sm:!mr-8" />
                 )}
-                {index === 4 && <ListAlt className="sm:!text-4xl sm:!mr-6" />}
+                {index === 4 && (
+                  <LocalDrinkOutlined className="sm:!text-4xl sm:!mr-6" />
+                )}
+                {index === 5 && <ListAlt className="sm:!text-4xl sm:!mr-6" />}
               </ListItemIcon>
               <ListItemText
                 primary={

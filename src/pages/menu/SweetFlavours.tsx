@@ -41,7 +41,7 @@ const SweetFlavours: React.FC = () => {
       <Box className="mt-4 sm:pt-[80px]">
         <Divider className="!w-[92%] !mb-[4vh]">
           <Typography
-            className="underline decoration-yellow-600 sm:!text-6xl"
+            className="underline decoration-yellow-400 sm:!text-6xl"
             variant="h4"
           >
             Pizzas Doces

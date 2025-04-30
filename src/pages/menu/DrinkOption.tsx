@@ -1,4 +1,5 @@
-import { Box } from '@mui/material';
+import { LocalDrinkOutlined } from '@mui/icons-material';
+import { Box, Divider, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { useMenuHandlers } from '../../../utils/menuFunctions';
 import CupsItem from '../../components/items/CupsItem';
@@ -13,7 +14,16 @@ const DrinkOption: React.FC = () => {
   }, [menu]);
 
   return (
-    <Box className="flex flex-col items-start pt-[12vh] pb-[8vh] sm:pb-[12vh] gap-[2vw]">
+    <Box className="flex flex-col items-start pt-[5vh] pb-[8vh] sm:pb-[12vh] gap-[2vw]">
+      <Divider className="!w-[92%] !mb-[4vh]">
+        <Typography
+          className="underline decoration-yellow-400 sm:!text-6xl"
+          variant="h4"
+        >
+          Copos
+        </Typography>
+        <LocalDrinkOutlined className="sm:!w-[50px] sm:!h-[50px] sm:mt-4" />
+      </Divider>
       {cups.map((cup, index) => (
         <CupsItem
           key={index}

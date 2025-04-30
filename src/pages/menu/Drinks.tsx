@@ -19,7 +19,7 @@ const Drinks: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         paddingBottom: '8vh',
-        marginTop: '4vh',
+        marginTop: '5vh',
         gap: '2vw',
       }}
     >
