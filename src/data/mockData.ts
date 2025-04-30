@@ -131,12 +131,20 @@ export const drinks: DrinkItem[] = [
   { name: 'Coca Cola 600ml', price: 8.0, drinkIcon: images.coca600 },
   { name: 'Coca Cola Zero 600ml', price: 8.0, drinkIcon: images.cocazero },
   { name: 'Agua', price: 6.0, drinkIcon: images.agua },
-  { name: 'Agua com Gas', price: 6.0, drinkIcon: images.aguagas },
-  { name: 'Cerveja Heineken 600ml', price: 18.0, drinkIcon: images.heineken },
-  { name: 'Cerveja Original 600ml', price: 16.0, drinkIcon: images.original },
-  { name: 'Suco Morango', price: 10.0, drinkIcon: images.morango },
-  { name: 'Suco Abacaxi', price: 10.0, drinkIcon: images.ananas },
-  { name: 'Suco Laranja', price: 10.0, drinkIcon: images.laranja },
+  { name: 'Agua com Gas', price: 6.0, drinkIcon: images.aguacomgas },
+  {
+    name: 'Cerveja Heineken 600ml',
+    price: 18.0,
+    drinkIcon: images.brejaheineken,
+  },
+  {
+    name: 'Cerveja Original 600ml',
+    price: 16.0,
+    drinkIcon: images.brejaoriginal,
+  },
+  { name: 'Suco Morango', price: 10.0, drinkIcon: images.sucomorango },
+  { name: 'Suco Abacaxi', price: 10.0, drinkIcon: images.sucoabacaxi },
+  { name: 'Suco Laranja', price: 10.0, drinkIcon: images.sucoabacaxi },
 ];
 
 export const cups: CupsItem[] = [

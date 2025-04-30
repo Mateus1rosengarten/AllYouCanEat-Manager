@@ -1,33 +1,29 @@
 import agua from './agua600.png';
-import aguagas from './aguagas.jpg';
-import ananas from './ananas.jpg';
+import aguacomgas from './aguacomgas.png';
 import bottle from './beer.png';
-import coke from './coca.jpg';
+import brejaheineken from './brejaheineken.png';
+import brejaoriginal from './brejaoriginal.png';
 import coca600 from './coca600.png';
 import cocapet from './cocapet.png';
 import cocazero from './cocazero.png';
 import icecub from './cold.png';
 import cup from './glass.png';
-import heineken from './heineken.jpg';
-import laranja from './laranja.jpg';
 import lemon from './lemon.png';
 import lemonjuice from './lemonjuice.png';
-import morango from './morango.jpg';
-import original from './original.jpg';
+import sucoabacaxi from './sucoabacaxi.png';
+import sucomorango from './sucomorango.png';
 
 export const images = {
-  coke,
   coca600,
   cocazero,
   cocapet,
   agua,
-  aguagas,
-  heineken,
-  original,
+  aguacomgas,
+  brejaheineken,
+  brejaoriginal,
   bottle,
-  morango,
-  ananas,
-  laranja,
+  sucomorango,
+  sucoabacaxi,
   lemon,
   lemonjuice,
   icecub,

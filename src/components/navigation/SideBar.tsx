@@ -104,20 +104,18 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
             <ListItemButton onClick={() => handleItemClick(item)}>
               <ListItemIcon>
                 {index === 0 && (
-                  <LocalPizzaOutlined className="sm:!text-4xl sm:!mr-8 text-yellow-400" />
+                  <LocalPizzaOutlined className="sm:!text-4xl sm:!mr-8" />
                 )}
                 {index === 1 && (
-                  <LocalPizza className="sm:!text-4xl sm:!mr-8 text-yellow-600" />
+                  <LocalPizza className="sm:!text-4xl sm:!mr-8" />
                 )}
                 {index === 2 && (
-                  <DinnerDining className="sm:!text-4xl sm:!mr-8 text-yellow-400" />
+                  <DinnerDining className="sm:!text-4xl sm:!mr-8" />
                 )}
                 {index === 3 && (
-                  <LocalDrink className="sm:!text-4xl sm:!mr-8 text-yellow-600" />
+                  <LocalDrink className="sm:!text-4xl sm:!mr-8" />
                 )}
-                {index === 4 && (
-                  <ListAlt className="sm:!text-4xl sm:!mr-6 text-yellow-400" />
-                )}
+                {index === 4 && <ListAlt className="sm:!text-4xl sm:!mr-6" />}
               </ListItemIcon>
               <ListItemText
                 primary={
@@ -147,10 +145,10 @@ const SideBar: React.FC<SideBarProps> = ({ drawerOpen, setDrawerOpen }) => {
                   <History className="sm:!text-4xl sm:!mr-8 text-yellow-600" />
                 )}
                 {index === 1 && (
-                  <PersonAdd className="sm:!text-4xl sm:!mr-8 text-[#2e7d32]" />
+                  <PersonAdd className="sm:!text-4xl sm:!mr-8 text-yellow-600" />
                 )}
                 {index === 2 && (
-                  <Payments className="sm:!text-4xl sm:!mr-8 text-[#2e7d32]" />
+                  <Payments className="sm:!text-4xl sm:!mr-8 text-yellow-600" />
                 )}
               </ListItemIcon>
               <ListItemText
